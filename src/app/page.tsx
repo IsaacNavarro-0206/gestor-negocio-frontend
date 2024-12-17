@@ -5,8 +5,8 @@ export default function Home() {
     <div className="space-y-6">
       <h1 className="text-3xl">Tablero</h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-4">
-        <div className="rounded-lg border border-gray-100 shadow-sm w-44 h-24 space-y-2 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-4 gap-10 lg:gap-0">
+        <div className="rounded-lg border border-gray-100 shadow-sm w-60 h-24 space-y-2 p-4">
           <div className="flex justify-between">
             <h1 className="text-sm font-normal">Total productos</h1>
 
@@ -16,7 +16,7 @@ export default function Home() {
           <p className="text-2xl font-semibold">245</p>
         </div>
 
-        <div className="rounded-lg border border-gray-100 shadow-sm w-44 h-24 space-y-2 p-4">
+        <div className="rounded-lg border border-gray-100 shadow-sm w-60 h-24 space-y-2 p-4">
           <div className="flex justify-between">
             <h1 className="text-sm font-normal">Clientes</h1>
 
@@ -26,7 +26,7 @@ export default function Home() {
           <p className="text-2xl font-semibold">30</p>
         </div>
 
-        <div className="rounded-lg border border-gray-100 shadow-sm w-44 h-24 space-y-2 p-4">
+        <div className="rounded-lg border border-gray-100 shadow-sm w-60 h-24 space-y-2 p-4">
           <div className="flex justify-between">
             <h1 className="text-sm font-normal">Proveedores</h1>
 
@@ -36,7 +36,7 @@ export default function Home() {
           <p className="text-2xl font-semibold">245</p>
         </div>
 
-        <div className="rounded-lg border border-gray-100 shadow-sm w-44 h-24 space-y-2 p-4">
+        <div className="rounded-lg border border-gray-100 shadow-sm w-60 h-24 space-y-2 p-4">
           <div className="flex justify-between">
             <h1 className="text-sm font-normal">Ventas del mes</h1>
 

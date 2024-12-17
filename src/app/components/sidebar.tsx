@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import {
-    Grid3X3Icon,
+  Grid3X3Icon,
   HouseIcon,
   PackageIcon,
   ReceiptText,
@@ -11,7 +11,7 @@ import {
 
 function Sidebar() {
   return (
-    <div className="bg-gray-100 w-1/4 h-full p-4">
+    <div className="bg-gray-100 w-1/4 h-full p-4 hidden lg:block">
       <h1 className="text-2xl font-bold mb-3">Gestor</h1>
 
       <nav>
@@ -48,7 +48,7 @@ function Sidebar() {
               <p className="text-lg">Productos</p>
             </Link>
           </li>
-          
+
           <li>
             <Link
               href="/categories"
