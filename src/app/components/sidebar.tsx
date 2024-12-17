@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import {
+    Grid3X3Icon,
   HouseIcon,
   PackageIcon,
   ReceiptText,
@@ -45,6 +46,17 @@ function Sidebar() {
               <PackageIcon />
 
               <p className="text-lg">Productos</p>
+            </Link>
+          </li>
+          
+          <li>
+            <Link
+              href="/categories"
+              className="flex items-center hover:bg-slate-200 rounded-md p-3 gap-2"
+            >
+              <Grid3X3Icon />
+
+              <p className="text-lg">Categorías</p>
             </Link>
           </li>
 
