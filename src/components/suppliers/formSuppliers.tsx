@@ -16,28 +16,22 @@ import { SquarePenIcon } from "lucide-react";
 // Esquema de validación con Yup
 const schema = yup.object().shape({
   name: yup.string().required("El nombre es obligatorio"),
-  phone: yup
-    .string()
-    .matches(/^\d+$/, "El teléfono debe contener solo números")
-    .required("El teléfono es obligatorio"),
-  address: yup.string().required("La dirección es obligatoria"),
+  contact: yup.string().required("El nombre es obligatorio"),
 });
 
 type FormValues = {
   name: string;
-  email?: string;
-  phone: string;
-  address: string;
+  contact: string;
 };
 
-type FormClientsProps = {
+type FormSuppliersProps = {
   initialValues?: FormValues; // Valores iniciales para edición
   mode: "create" | "edit"; // Modo del formulario
   onSubmit: (data: FormValues) => void; // Función para manejar el envío
 };
 
-const FormClients: React.FC<FormClientsProps> = ({
-  initialValues = { name: "", email: "", phone: "", address: "" },
+const FormSuppliers: React.FC<FormSuppliersProps> = ({
+  initialValues = { name: "", contact: "" },
   mode = "create",
   onSubmit,
 }) => {
@@ -63,7 +57,7 @@ const FormClients: React.FC<FormClientsProps> = ({
           variant={`${mode === "create" ? "default" : "ghost"}`}
         >
           {mode === "create" ? (
-            "Crear cliente"
+            "Crear Proveedor"
           ) : (
             <SquarePenIcon color="orange" />
           )}
@@ -73,7 +67,7 @@ const FormClients: React.FC<FormClientsProps> = ({
       <DialogContent className="sm:max-w-[425px] w-11/12">
         <DialogHeader>
           <DialogTitle>
-            {mode === "create" ? "Nuevo Cliente" : "Editar Cliente"}
+            {mode === "create" ? "Nuevo Proveedor" : "Editar Proveedor"}
           </DialogTitle>
         </DialogHeader>
 
@@ -95,40 +89,26 @@ const FormClients: React.FC<FormClientsProps> = ({
               )}
             </div>
 
-            {/* Campo: Email */}
+            {/* Campo: Contacto */}
             <div className="grid grid-cols-4">
               <Input
-                id="email"
-                placeholder="Correo electrónico"
+                id="contact"
+                placeholder="Contacto"
                 className="col-span-4"
-                {...register("email")}
+                {...register("contact")}
               />
-            </div>
 
-            {/* Campo: Telefono */}
-            <div className="grid grid-cols-4">
-              <Input
-                id="phone"
-                placeholder="Teléfono"
-                className="col-span-4"
-                {...register("phone")}
-              />
-            </div>
-
-            {/* Campo: Direccion */}
-            <div className="grid grid-cols-4">
-              <Input
-                id="address"
-                placeholder="Dirección"
-                className="col-span-4"
-                {...register("address")}
-              />
+              {errors.name && (
+                <p className="text-red-500 text-sm mt-1 col-span-4">
+                  {errors.name.message}
+                </p>
+              )}
             </div>
           </div>
 
           <DialogFooter>
             <Button type="submit">
-              {mode === "create" ? "Crear Cliente" : "Guardar Cambios"}
+              {mode === "create" ? "Crear Proveedor" : "Guardar Cambios"}
             </Button>
           </DialogFooter>
         </form>
@@ -137,4 +117,4 @@ const FormClients: React.FC<FormClientsProps> = ({
   );
 };
 
-export default FormClients;
+export default FormSuppliers;
