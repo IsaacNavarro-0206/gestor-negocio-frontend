@@ -137,13 +137,9 @@ const data: Clients[] = [
 ];
 
 type Clients = {
-  name: string;
-  email?: string;
-  phone: string;
-  address: string;
   edit: React.ReactNode;
   delete: React.ReactNode;
-};
+} & ClientType;
 
 export const columns: ColumnDef<Clients>[] = [
   {

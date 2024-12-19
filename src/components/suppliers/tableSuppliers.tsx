@@ -83,11 +83,9 @@ const data: Suppliers[] = [
 ];
 
 type Suppliers = {
-  name: string;
-  contact: string;
   edit: React.ReactNode;
   delete: React.ReactNode;
-};
+} & SupplierType;
 
 export const columns: ColumnDef<Suppliers>[] = [
   {

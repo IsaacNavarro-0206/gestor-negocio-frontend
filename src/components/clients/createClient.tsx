@@ -3,15 +3,8 @@
 import { SubmitHandler } from "react-hook-form";
 import FormClients from "./formClients";
 
-type FormValues = {
-  name: string;
-  email?: string;
-  phone: string;
-  address: string;
-};
-
 const FormCreateClient = () => {
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit: SubmitHandler<ClientType> = (data) => {
     console.log(data);
   };
 

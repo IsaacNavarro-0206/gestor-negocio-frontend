@@ -3,12 +3,8 @@
 import { SubmitHandler } from "react-hook-form";
 import FormCategories from "./formCategories";
 
-type FormValues = {
-  name: string;
-};
-
 const FormCreateCategory = () => {
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit: SubmitHandler<CategoryType> = (data) => {
     console.log(data);
   };
 

@@ -23,17 +23,10 @@ const schema = yup.object().shape({
   address: yup.string().required("La dirección es obligatoria"),
 });
 
-type FormValues = {
-  name: string;
-  email?: string;
-  phone: string;
-  address: string;
-};
-
 type FormClientsProps = {
-  initialValues?: FormValues; // Valores iniciales para edición
+  initialValues?: ClientType; // Valores iniciales para edición
   mode: "create" | "edit"; // Modo del formulario
-  onSubmit: (data: FormValues) => void; // Función para manejar el envío
+  onSubmit: (data: ClientType) => void; // Función para manejar el envío
 };
 
 const FormClients: React.FC<FormClientsProps> = ({
@@ -46,7 +39,7 @@ const FormClients: React.FC<FormClientsProps> = ({
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormValues>({
+  } = useForm<ClientType>({
     resolver: yupResolver(schema),
     defaultValues: initialValues,
     mode: "onChange",

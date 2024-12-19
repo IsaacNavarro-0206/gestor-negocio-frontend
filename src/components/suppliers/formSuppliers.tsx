@@ -19,15 +19,10 @@ const schema = yup.object().shape({
   contact: yup.string().required("El nombre es obligatorio"),
 });
 
-type FormValues = {
-  name: string;
-  contact: string;
-};
-
 type FormSuppliersProps = {
-  initialValues?: FormValues; // Valores iniciales para edición
+  initialValues?: SupplierType; // Valores iniciales para edición
   mode: "create" | "edit"; // Modo del formulario
-  onSubmit: (data: FormValues) => void; // Función para manejar el envío
+  onSubmit: (data: SupplierType) => void; // Función para manejar el envío
 };
 
 const FormSuppliers: React.FC<FormSuppliersProps> = ({
@@ -40,7 +35,7 @@ const FormSuppliers: React.FC<FormSuppliersProps> = ({
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormValues>({
+  } = useForm<SupplierType>({
     resolver: yupResolver(schema),
     defaultValues: initialValues,
     mode: "onChange",

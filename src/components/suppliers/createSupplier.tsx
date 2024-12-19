@@ -3,13 +3,8 @@
 import { SubmitHandler } from "react-hook-form";
 import FormSuppliers from "./formSuppliers";
 
-type FormValues = {
-  name: string;
-  contact: string;
-};
-
 const FormCreateSupplier = () => {
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit: SubmitHandler<SupplierType> = (data) => {
     console.log(data);
   };
 

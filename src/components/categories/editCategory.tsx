@@ -3,15 +3,12 @@
 import { SubmitHandler } from "react-hook-form";
 import FormCategories from "./formCategories";
 
-type FormValues = {
-  name: string;
-};
 interface FormEditCategroyProps {
-  data: FormValues;
+  data: CategoryType;
 }
 
 const FormEditCategory = ({ data }: FormEditCategroyProps) => {
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit: SubmitHandler<CategoryType> = (data) => {
     console.log(data);
   };
 

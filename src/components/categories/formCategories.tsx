@@ -18,14 +18,10 @@ const schema = yup.object().shape({
   name: yup.string().required("El nombre es obligatorio"),
 });
 
-type FormValues = {
-  name: string;
-};
-
 type FormCategoriesProps = {
-  initialValues?: FormValues; // Valores iniciales para edición
+  initialValues?: CategoryType; // Valores iniciales para edición
   mode: "create" | "edit"; // Modo del formulario
-  onSubmit: (data: FormValues) => void; // Función para manejar el envío
+  onSubmit: (data: CategoryType) => void; // Función para manejar el envío
 };
 
 const FormCategories: React.FC<FormCategoriesProps> = ({
@@ -38,7 +34,7 @@ const FormCategories: React.FC<FormCategoriesProps> = ({
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<FormValues>({
+  } = useForm<CategoryType>({
     resolver: yupResolver(schema),
     defaultValues: initialValues,
     mode: "onChange",

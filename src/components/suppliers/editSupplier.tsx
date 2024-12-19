@@ -3,17 +3,12 @@
 import { SubmitHandler } from "react-hook-form";
 import FormSuppliers from "./formSuppliers";
 
-type FormValues = {
-  name: string;
-  contact: string;
-};
-
 interface FormEditSupplierProps {
-  data: FormValues;
+  data: SupplierType;
 }
 
 const FormEditSupplier = ({ data }: FormEditSupplierProps) => {
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit: SubmitHandler<SupplierType> = (data) => {
     console.log(data);
   };
 

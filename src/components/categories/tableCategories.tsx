@@ -68,7 +68,7 @@ type Categories = {
   name: string;
   edit: React.ReactNode;
   delete: React.ReactNode;
-};
+} & CategoryType;
 
 export const columns: ColumnDef<Categories>[] = [
   {

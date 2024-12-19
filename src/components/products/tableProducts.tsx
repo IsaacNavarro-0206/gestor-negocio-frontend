@@ -101,12 +101,9 @@ const data: Products[] = [
 ];
 
 type Products = {
-  name: string;
-  stock: number;
-  category: string;
   edit: React.ReactNode;
   delete: React.ReactNode;
-};
+} & ProductType;
 
 export const columns: ColumnDef<Products>[] = [
   {
