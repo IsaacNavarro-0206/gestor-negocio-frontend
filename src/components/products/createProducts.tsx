@@ -1,7 +1,7 @@
 "use client";
 
 import { SubmitHandler } from "react-hook-form";
-import GenericForm from "./GenericFormProducts";
+import GenericForm from "./genericFormProducts";
 
 type FormValues = {
   name: string;
