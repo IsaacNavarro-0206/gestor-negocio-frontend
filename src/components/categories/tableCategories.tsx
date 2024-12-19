@@ -107,7 +107,7 @@ const TableCategories = () => {
     <GenericTable
       data={data}
       columns={columns}
-      filterPlaceholder="Buscar por productos"
+      filterPlaceholder="Buscar por categorías"
     />
   );
 };
