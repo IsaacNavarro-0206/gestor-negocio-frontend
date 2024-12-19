@@ -3,7 +3,7 @@ import { ChartLine, PackageIcon, TruckIcon, UsersIcon } from "lucide-react";
 export default function Home() {
   return (
     <div className="space-y-6">
-      <h1 className="text-3xl">Tablero</h1>
+      <h1 className="text-3xl font-bold">Tablero</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-4 gap-10 lg:gap-0">
         <div className="rounded-lg border border-gray-100 shadow-sm w-60 h-24 space-y-2 p-4">
