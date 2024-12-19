@@ -1,7 +1,7 @@
 "use client";
 
 import { SubmitHandler } from "react-hook-form";
-import GenericForm from "./formProducts";
+import FormProducts from "./formProducts";
 
 type FormValues = {
   name: string;
@@ -14,7 +14,7 @@ const FormCreateProduct = () => {
     console.log(data);
   };
 
-  return <GenericForm onSubmit={onSubmit} mode="create" />;
+  return <FormProducts onSubmit={onSubmit} mode="create" />;
 };
 
 export default FormCreateProduct;

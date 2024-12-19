@@ -1,7 +1,7 @@
 "use client";
 
 import { SubmitHandler } from "react-hook-form";
-import GenericForm from "./formProducts";
+import FormProducts from "./formProducts";
 
 type FormValues = {
   name: string;
@@ -18,7 +18,7 @@ const FormEditProduct = ({ data }: FormEditProductProps) => {
     console.log(data);
   };
 
-  return <GenericForm onSubmit={onSubmit} mode="edit" initialValues={data} />;
+  return <FormProducts onSubmit={onSubmit} mode="edit" initialValues={data} />;
 };
 
 export default FormEditProduct;

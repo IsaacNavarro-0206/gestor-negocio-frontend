@@ -38,13 +38,13 @@ type FormValues = {
   category: string;
 };
 
-type FormCreateProductProps = {
+type FormProductsProps = {
   initialValues?: FormValues; // Valores iniciales para edición
   mode: "create" | "edit"; // Modo del formulario
   onSubmit: (data: FormValues) => void; // Función para manejar el envío
 };
 
-const GenericForm: React.FC<FormCreateProductProps> = ({
+const FormProducts: React.FC<FormProductsProps> = ({
   initialValues = { name: "", stock: 0, category: "" },
   mode = "create",
   onSubmit,
@@ -69,9 +69,7 @@ const GenericForm: React.FC<FormCreateProductProps> = ({
     <Dialog onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <Button
-          className={`${
-            mode === "create" ? "bg-black text-white" : ""
-          }`}
+          className={`${mode === "create" ? "bg-black text-white" : ""}`}
           variant={`${mode === "create" ? "default" : "ghost"}`}
         >
           {mode === "create" ? (
@@ -137,7 +135,9 @@ const GenericForm: React.FC<FormCreateProductProps> = ({
                 <SelectContent>
                   <SelectItem value="Ron">Ron</SelectItem>
                   <SelectItem value="Whisky">Whisky</SelectItem>
-                  <SelectItem value="Cerveza botella">Cerveza botella</SelectItem>
+                  <SelectItem value="Cerveza botella">
+                    Cerveza botella
+                  </SelectItem>
                   <SelectItem value="Cerveza lata">Cerveza lata</SelectItem>
                   <SelectItem value="Tequila">Tequila</SelectItem>
                   <SelectItem value="Aguardiente">Aguardiente</SelectItem>
@@ -163,4 +163,4 @@ const GenericForm: React.FC<FormCreateProductProps> = ({
   );
 };
 
-export default GenericForm;
+export default FormProducts;
